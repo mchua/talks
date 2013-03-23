@@ -1,0 +1,165 @@
+NAOMI: Welcome. This will be EduPsych Theory for Python Hackers. This is a half-hour talk by Mel Chua, we're going to try to have about five to eight minutes at the end for questions. Ok. Mel Chua!
+
+MEL: Hi. Hi, everyone. So, welcome to EduPsych Theory for Python Hackers. This is a very laptops-encouraged talk. The slides are on the web and there'll be a lot of points where I'll say "It's Wikipedia time!" if you want to look up something up or follow a resource down, because what I'm about to do is try to cram about 2 years of graduate school education classes into approximately 20 minutes. So there's going to be a lot that we cover very very quickly and there's going to be a lot that we don't cover but I'll go "there's a link!"
+
+So, my name is Mel, and in between bouts of academia I've been spending a lot of time wandering around sort of the hacking world, the coding world, the open source world, the Python world. And the reason I went back to academia was because there was a bug I wanted to fix, it was classrooms looked like that and not like this, and not like the sorts of really cool hacking, messing-around-with-things communities we all know and love.
+
+And there's this giant cultural gulf between the academic world and the world we know here.
+
+And my belief is that you folks here at PyCon are doing it right. So, in particular -- so one example, like test-driven development. Many of us would probably be familiar with this, that's a doctest for a function that returns a factorial of a number, and there's a test for it, and I was taught when I started programming that when you're writing code, you figure out what you want the code to do first, then write a test to make sure that the code you're going to write is performing the function you want it to perform, then you write the code.
+
+And when you design curriculum, you should do exactly the same thing. So a lot of people make the mistake of starting with the pedagogy phase. As in "that would be a really cool activity to do with students." So, pause, step back -- first figure out the content, the objectives you want. Then write the test. How will you assess that students are able to achieve the objectives you want. Then figure out the pedagogy of what activity you want them to do to get there. Understanding By Design is a lovely book if you want to learn a bit more about that approach.
+
+And if you're trying to figure out well, well, what's this content thing -- Bloom's Taxonomy is a handy-dandy list of words that you can use. It goes up in a hierarchy. Do you want students to memorize and remember things? Which is very easily dismissed, and sometimes it's not a bad thing because there are only so many times you can say "the square brackets are lists, the curly ones are dictionaries" over and over again before you just want them to know it. Do you want them to be able to apply things in a step-by-step tutorial following instructions? Do you want them to be able to evaluate, like "here's two approaches, which one do you think is better? Why?" Do you want them to be able to create things? And the thing about the taxonomy is the stuff at the top, we usually think of as "better" -- it's not necessarily "better." It takes more time. It's really hard to do the things at the top unless you've done some things at the bottom first.
+
+So, back to the whole cultural gulf between these two...
+
+One of the things that again, as Pythonistas, you already know is the world is socially constructed. And some people in school have a very hard time understanding this. But we already know that, because -- well, why is the Python language the way it is? It's not because some higher power from above ordained it -- well, uh, it kind of is [laughter] but they're called maintainers, and they're humans! And we can see them talking on the mailing lists! And you can see their commit messages! And you can see them going back and forth! And so we have this idea that the world is just as hackable as our technologies are. And that's a very, very powerful viewpoint to have.
+
+So. So here's the thing. We need to come up with some sort of translation between the two worlds, because what happened when I went back to graduate school and I started teaching again, and I was talking about "oh my gosh, we're all in these communities of makers and the open source world and the Python community and we're learning and it's fun and it's wonderful -- can I do this in my classroom, please?" They went "well, well... what is it you do there?" and I went "uhhh... we... make things and it's fun," they're like "oh, you're just playing..." And so I needed to find ways to describe it in words they would understand. [laughter] And, uh... yeah.
+
+So, so let's go through some of this.
+
+Accidental learning. It's a fancy word for "we didn't plan it ahead of time." [laughter] All right? So say that you hang out in the IRC channel, people are talking, things are gonna come up, things you didn't expect to learn about that day. And this is the kind of hap- kind of thing that happens in our world all the time. You're in a conference, you're milling around, you meet people, so accidental learning or "authentic experiences" is another really useful phrase.
+
+And communities of practice. Python is a community of practice. Communities of Practice is another really big theoretical construct that a lot of education people use and it is within a domain, a community of people -- so we're in the domain of programming. We are a community of people who share the practice of programming in Python. Within the domain of Python web frameworks, the Django community is a community that shares the practice of using the Django framework.
+
+And so if you think of a community of practice, it's actually a learning entity, and cognitive apprenticeship is how learning happens inside communities of practice. And if you think about a shop floor, how like a traditional handcraft like wood, woodworking, or delivering babies, or what have you, as an apprentice you see two different pathways.
+
+One is that you see the pathway from raw product to finish product. But you also see the pathway from new apprentice to master. And it's not just one pathway, it's I see the more experienced apprentices ahead of me, I see the journeymen ahead of them, and I don't just see one master, I see 50, I see 20, I see a thousand masters, so I get the idea that there are many different kinds of mastery and many different kinds of people, it's not a linear route I'm on, it's not "I'm comparing myself to him or her," but it's "what kind of master will I become? What does it mean for me to have mastery in this domain?"
+
+And the modeling, coaching, scaffolding, and fading -- because these communities of practice and these sort of apprentice shops are in our head, when we're programming, it's not like you can see, like, you know, bugfixing in your brain is not quite as visible as let me saw this drawer in this wood.
+
+And so modeling, coaching, scaffolding, and fading are four things that, as people we teach, we can think about.
+
+So modeling is doing the task yourself so the learner can see it, coaching is standing on the sidelines and giving them realtime feedback as they're attempting that task themselves. Scaffolding is designing a task so that they take on a little bit and then successively more. So for instance, the first time someone is running a program and it crashes, you might model "this is how you submit a bug report." The next time, you might scaffold that a little bit. You open up bugzilla and then say "you watched me type the subject line before, why don't you come up with a subject line now? All right, now that you've come up with a subject line, let's type the body together."
+
+And over time you give them more and more responsibility. And after that you start to fade slowly until they're doing the entire task on their own.And that link at the bottom if you want to learn more way more about cognitive apprenticeship is a paper I wrote on cognitive apprenticeship case studies in open source communities.
+
+So what happens when you go through a cognitive apprenticeship is you progress from novice to expert. And the Dreyfus Model of Skill Acquisition is a framework you can use to think about that progression. And the insight here that the Dreyfus brothers have was not that people progress from novice to expert, which is kind of obvious, but -- uh, perhaps equally obvious -- is that when you are at any given state, it's very hard to tell and remember what the other stages are like.
+
+So if you are an advanced beginner, you've kinda forgotten what it's like to be a novice, and you have no idea what it's like to be proficient, or an expert.
+
+And so what that means is that the world looks very different to very different types of people. So for instance, if you are proficient or an expert or, you know, pretty comfortable with Python, working in communities remotely, an IRC channel might look like a place where you might get help faster, right? Find tasks faster -- these are all happy, happy tools for us. Alright? And we see them as things that can bring, like, the little green people on the outskirts into the little purple people on the inside of our community. Oh man. It'll be wonderful!
+
+And, um, but the green people on the outskirts don't necessarily see it that way, right?
+
+They might think this. "We will not talk to you until you use this strange new tool. Stop asking me what to do and go away. To a corner no one has touched for months." [laughter] And that's not really the impression we're trying to give them.
+
+But why do they think that? So: Piaget. One of the reason why -- this talk alone, if you can not read Piaget and get this, it's worth it because I had to read the original translations from the French, and ugh.
+
+So, Piaget has two ideas -- well, he has a lot more ideas, but the two I'm going to talk about here are assimilation and accomodation. Uh, assimilation is when you can add new information to the mental schemas you already have, and accommodation is when you have enough data that doesn't really kinda fit that you've got to refactor it, and we have a really great example over here. [laughter] Right?
+
+And so let's think about that, right? There are some people that, even as Python 3 was out, kept on using Python 2.5, 6, 7, and so you had two parallel streams. And so you have students -- some of them are going to keep on wanting to think the same way they've been thinking, until it really, really, really, really no longer works, and others are going to be early adopters, and telling them that is a switch that they're making in paradigms is something you can do to make it more conscious that that's the process that they're going through.
+
+And -- but, you know, back to that earlier image, right, to see things the wrong way can actually scare people, right? And the Dreyfus model talks about what, uh, context, what, what are novices missing? Novices are missing context.
+
+If you are just beginning to learn how to cook, you really want a cookbook that says "this is a chicken. A chicken is a bird. [laughter] This is what you do with it. Turn on the oven. [laughter]" And on the other hand if you're an experiened chef, you can go and you compete in Iron chef, and they say "SARDINES!" and you go "oh, wow!" [laughter] Because you have the context of how to improvise in that world.
+
+And so the resources that work for an expert or someone higher up in the Dreyfus scale -- acquisition scale -- aren't going to work for a novice.
+
+And so that's another thing. Looking at where your students are, what they need, where they feel they are, and how much context they can handle so you can scaffold them appropriately.
+
+So -- quick bit. Assessment -- because I was thinking about food, and formative versus summative assessment is a good aside to put in here. Formative assessment is like tasting food as you're cooking it to make sure it's going to turn out okay. Summative assessment is tasting the food at the end once you've served it and it's done.
+
+Summative assessment is the kind of assessment that usually happens in schools; you get a grade at the end of the semester. Formative assessment is the kind of assessment that happens in here. You have conversations on things on your blog, you get people's feedback, you review their code, and so when you talk to educators and they say "well, how are you going to assess your students?" and the answer is "well, I don't, I don't wanna grade them," you can say well, well, they have many opportunities for informal formative assessment with experienced members of the community, and it'll sound good.
+
+So, back to Dreyfus. One of the things that that dispels is the myth that you can't contribute until you're "good enough." Right. There are still things that novices can do if they are scaffolded appropriately. And two things that can help you think about that is -- in a cognitive apprenticeship within a community of practice there's the idea of the zone of proximal development and the idea of legitimate peripheral participation. And they're related.
+
+So, proximal development is -- so here's the things I can already do. And then are the things on the other end that I can never do no matter how much help I get -- at this point in time. And in the middle of that, there's the stuff that I can do if and only if someone else helps me. That is the zone of proximal development. And so -- bike riding, it's when you're at that stage where you can kinda wobble on the bike if your, if your brother is hanging on to keep you hanging.
+
+So what's the equivalent in the Python community? It might look like pair programming, it might look like code review, it might look like any sort of interaction between experienced people and less experienced people. And one of the cool things about the zone of proximal development is that you don't need experienced versus less experienced -- peers can create zones of proximal development for each other. But it's the enablement that an extra person beside you or with you online creates.
+
+Legitimate peripheral partipation is what -- the means for allowing people to contribute without being the core already. So there are mission critical tasks, and, you know, these things that nobody really cares about. And legitimate peripheral participation opportunities come with the jobs that -- it would be really, really cool if we could do this, but none of the core people have time for.
+
+And so that's a lot of where Google Summer of Code projects sorta fall into that category, a lot of good projects for students in classes fall into that category, if you have things that your core community would love to see fixed, so they'll actually help people who are coming in to fix it, but they're not so vital that if they don't fix it the build gets delayed because this one student couldn't figure out how to write the code -- that's a great opportunity.
+
+And -- now, switching gears for a bit, going back to that first example of test-driven development, this is also a good example of behaviorist thinking. The fact that, you know, we've got that little function that says [robotic voice] we will test these students, they will produce an output, it will tell us the true and accurate mentality of how much they know -- [normal voice] That is a fair assumption to make, but it's an assumption you should know you're making.
+
+And so what I'm going to do, uh, for, for the grand finale of this -- well, semi-grand finale of this -- is to go through 50 years of cognitive paradigms in teaching and learning very, very quickly, and if you want the less-abridged version, um, there are resources there. So.
+
+This is 50 years of educational psychology history on one page. In the beginning there was behaviorism, which is the carrot-and-stick stimulus-response thinking, all right? You have a student, they're a black box, you poke at them, there's an output, it will be the correct answer! We hope. If not, we'll poke at them more and kinda beat them with a stick and wave a little carrot in front of them, and they'll give the correct answer!
+
+And sometimes we go "ah, behaviorism is bad, it's outmoded and outdated" -- but it's really useful.
+
+For instance. The Boston Python Workshop uses CodingBat to teach stuff. Anytime we talk about automating learning, automating experience, we're taking a behaviorist mentality, alright? So we say, write this code, type it in, press the button, did you get the right answer, yes/no. So it's not an evil thing, it's a very, very useful tool, but it's something to be conscious of.
+
+Then there are people who went "well, the behaviorists think that inside the brain's a black box, but what goes inside there is actually important." And so how do we structure material? How do we store it in our memory? How do we organize things so they're easier for people to learn?
+
+And a really good example of that is actually you folks. Why do so many people like programming in Python, as opposed to other languages? It fits in your brain pretty nicely. You can read the code, it makes sense, as opposed to -- I had to program in assembly back in the day and that -- it didn't fit in my brain quite so well. And so using Python is already using cognitive schemas and working with people who value the use of good cognitive schemas.
+
+Then we move into the situative domain, people were like "alright, stuff is happening in your cranium, you're responding to input... but really, this stuff happens in a community. Learning happens in a context. Knowledge only really makes sense if other people know it too, and validate it."
+
+And that's a lot of what we were talking about with the cognitive apprenticeship earlier.
+
+But another good example of that is Sugar Labs. So this is a learning environment for kids, written in Python, where they can, um, play, play with different games for learning, but one of the cool things is -- we were talking about modeling, coaching, scaffolding, and fading -- that's also built into the design of the activity. So you can play the game, and at another level you can click on the little gear thing and make your own abacus, and on another level you can click on another button and see the Python code and work on it, and so there's different levels of scaffolding and you can see the work of multiple people and share your code with others and that's getting out of the "I'm a person on my computer working alone" and into the "I'm a person working in a broader community connecting with other people" socially constructing a world with them.
+
+So, in a parallel thread to that timeline of behaviorist, um, cognitive thinking, and, um, situated learning, was the ideas of different theories of motivation. And I'm going to go through a few of them really quickly.
+
+One of them is self-efficacy, which is the idea of how much you believe you can do this. And that is, in rank order, the things they found affected self-efficacy the most. If you care about making people believe they can do things, this is the list you want to pay attention to.
+
+So the most impactful thing is doing it, because if you did it before you can probably do it again. The second one is seeing people do it -- people that look like you. The converse of that is if you see people that look like you fail at it, then you start thinking "maybe I can't do it either." And the third one, social persuasion, is other people coming up and saying "you can do this, you can try this, you should come, you should come to this talk, you should go to this tutorial, you should give another talk."
+
+And the interesting thing is that those three things override your physical body, so if you have butterflies in your stomach, and you're really scared about hitting the Enter key, but the people beside you are going "yeah, you can do this!" and you're watching people around you succeeding, then you're really likely to believe you can you can take that leap.
+
+Attribution theory -- another thing. Do you walk into the room thinking that "my talent in coding is innate," or do you walk into the room thinking "it's a muscle, if I exercise it, I'll get better, and if people are really good, they're good because they work really hard."? And so what attitude do your students come into the room with, and what attitude as a teacher do you project?
+
+And this is a really good example here, because I think people who come to things like PyCon are coming because they want to learn things, because they know that it's not a magical talent we're born with, we gain those through exposure and working with others that are interested.
+
+Then there's motivation, and moving from amotivaton, which is "I don't care," to "other people make me do it," "I do it because it's good for me and it'll help me get a good job," into "this is really really cool" -- which is, for the most part where we want people to end up -- can be influenced by making, increasing autonomy, relatedness, and competence.
+
+So, autonomy is the freedom you have to decide what you're gonna do. Relatedness is how close your project is to someting I already care about, and competence is self-efficacy we talked about earlier. How good do I think I am at doing it, not how good I am at it really, but how good do I think I am. So if you want to increase the stuff on the left, turn the sliders up for the stuff on the right.
+
+And so now with that, this, this paragraph should now start making a little bit more sense.
+
+So... why do I do this? Why am I talking about these kinds of things? And the thing is, because we can only see a little bit of the world. We can only see a little bit of what students do and what they think. And as teachers we have a lot of privilege. and we don't necessarily see what our students are assuming about themselves, or about why things may not be working for them yet.
+
+We tend to teach the way we learn. And so sometimes we think "oh, well, the way I teach is the way it should be taught," or maybe "the way I teach is better than the way they teach in school, but clearly it's the way it should be taught." And that's just not necessarily true. For your students, the first couple steps do not feel like progress. You're guarding their thoughts, you're scared, and you might be quiet, but underneath the silence, stuff is happening inside. Reason is stirring in the background.
+
+And it's very important that confirmation that you belong to a community starts when you begin to try rather than being an end goal you try to get. once you take the first step, you already belong.
+
+And that's all I had. Time for questions? [applause]
+
+NAOMI: Ok. If you have questions, we've got a microphone there and we've got a microphone here.
+
+AUDIENCE MEMBER: Yeah, um, can you go back a few slides? I missed the quote.
+
+MEL: Um, this one? Ok.
+
+AUDIENCE MEMBER: Um, yeah. First, I want to thank you, that was -- oh, go ahead.
+
+MEL: No, go ahead.
+
+AUDIENCE MEMBER: So I want to thank you, that was really interesting and not at all what I thought I would be learning when I came to PyCon so it was an accidental learning opportunity. [laughter] And then, um, could you recommend a book that we could...
+
+MEL: Come again?
+
+AUDIENCE MEMBER: Could you recommend a book, that, on this topic? Like, some kind of [indistinguishable] book?
+
+MEL: On which topic?
+
+AUDIENCE MEMBER: On educational psychology, it's an interesting field which I know nothing about except, um, this [laughter] and it sounds quite big but I don't want to go to graduate school either. [laughter]
+
+MEL: Ah. So, uh, if I could only recommend one book, I would... um, I believe it's called "Theories of Development" by Crain, C-R-A-I-N, and I can write that down for you afterwards if you'd like. And what that is, is a snapshot of individual researchers that have developed -- so Bandura's in there, Dweck is in there, a couple of the things we went through are in there, and it gives 5-page summaries of all the very complicated papers. And it's lovely.
+
+NAOMI: Ok, another question.
+
+AUDIENCE MEMBER: Thanks. Thanks again for doing this talk. I was just curious what are some of the next steps for you, what do you think, do you think you can make engineering, this kind of teaching methodology based on our open source movement is really interesting.
+
+MEL: Well, I'm interested in 2.5 things. [laughter] Well, one, one is -- so the reason I'm giving this talk is I'm assuming y'all are all people who do Python things and care about teaching, and I wanted to try and give you some language to explain what you're doing, to validate it in the world of professional schooling. And to go and be able to say "this is a great thing to have your class do, this is a great thing to have, you know, as part of the curriculum." It's not something should be relegated to just after-school clubs that are just playing around, because putting it into more mainstream schooling will give more people access to it instead of just the people that have the resources in both time and equipment to play around with it on the side. And so that's one of the things -- and so if you are interested in, um, trying to help explain the project that you're doing to educational institutions I'd be really happy to help with that.
+
+Another thing I'm interested in is going in the opposite direction, working with teachers who are interested in working with folks like you. And doing things in their classroom. So Jeff and Steve up in the front row are brilliant examples. I wish I could clone them. Jeff is K-12 and Steve does college, and how do they move in the opposite direction and get to know what it's like to work in these sorts of projects and communities.
+
+And the point-five is that a number of people have been trying to bug me to write this up in longer form as a bidirectional translation for both sides and I'm not sure if more than three people are actually interested in that but that might be something to do once I finish up my classes next semester.
+
+AUDIENCE MEMBER: Thank you.
+
+AUDIENCE MEMBER: So if there was one thing that you could get the average computer science teacher to change or stop doing or start doing, what would it be?
+
+MEL: It would be... mm, looking up... It would be working on the content. A lot of teachers, their learning objectives are filled with "we have to hit standard XYZ, and there's 20 learning objectives and we have to get through all the chapters of the textbook" and... where is it, there we go, and so it's a very linear thing because you need to have a predefined outcome, but loosening that up and changing things so that your goal is "let me have students become confident wandering in an unknown world" -- being comfortable being, um, "productively lost" is a phrase I like to use a lot. Having them be comfortable being productively lost. So even if they don't get specific bits of content or specific bits of material, that they're comfortable moving around and improvising, and that's the learning objective -- that's the one thing I'd like to see changed but it's a huge, huge, huge change and it's a very risky change for a lot of people, so it's ahard one.
+
+NAOMI: Ok. Any more questions?
+
+MEL: I think that's time.
+
+NAOMI: Thank you very much.
